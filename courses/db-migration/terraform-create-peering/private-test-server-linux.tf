@@ -1,13 +1,13 @@
 # Create Test Server in Private VPC
 resource "google_compute_instance" "private-test-server-linux" {
   name         = "private-test-server-linux-${random_id.instance_id.hex}"
-  machine_type = "f1-micro"
+  machine_type = "e2-micro"
   zone         = var.gcp_zone_1
   tags         = ["allow-ssh"]
 
   boot_disk {
     initialize_params {
-      image = "debian-cloud/debian-9"
+      image = "debian-cloud/debian-11"
     }
   }
 
